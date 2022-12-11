@@ -204,6 +204,12 @@ public class QuizActivity extends AppCompatActivity {
         // here first we are getting the answer from the question list get answer function and setting it into get answer
         final String getAnswer = questionLists.get(currentQuestionPosition).getAnswer();
 
+        final String getUserSelectedAnswer = questionLists.get(currentQuestionPosition).getUserSelectedAnswer();
+        if(!getUserSelectedAnswer.equals(getAnswer)) {
+            // when a user get the wrong answer then we will vibrate the phone
+            Vibrator vibrator = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+            vibrator.vibrate(100);
+        }
         // checking if any option have the matching text so it will start that particular condition and leave everything else
         if(quizBinding.option1.getText().toString().equals(getAnswer)){
             quizBinding.option1.setTextColor(Color.WHITE);
