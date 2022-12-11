@@ -61,10 +61,10 @@ public class QuizActivity extends AppCompatActivity {
                 quizBinding.option1.setBackgroundResource(R.drawable.background_option_red_color);
                 // calling the function to check which question is right
                 revealAnswer();
-                // this function will implement when a user give the wrong answer
-                vibrate();
                 // at last we are setting the user selected answer so we can check which one is correct and which one is incorrect
                 questionLists.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
+                // this function will implement when a user give the wrong answer
+                vibrate();
             }
         });
         quizBinding.option2.setOnClickListener(v ->{
@@ -78,10 +78,10 @@ public class QuizActivity extends AppCompatActivity {
             quizBinding.option2.setBackgroundResource(R.drawable.background_option_red_color);
             // calling the function to check which question is right
             revealAnswer();
-            // this function will implement when a user give the wrong answer
-            vibrate();
             // at last we are setting the user selected answer so we can check which one is correct and which one is incorrect
             questionLists.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
+                // this function will implement when a user give the wrong answer
+                vibrate();
             }
         });
         quizBinding.option3.setOnClickListener(v ->{
@@ -95,10 +95,10 @@ public class QuizActivity extends AppCompatActivity {
              quizBinding.option3.setBackgroundResource(R.drawable.background_option_red_color);
             // calling the function to check which question is right
              revealAnswer();
-             // this function will implement when a user give the wrong answer
-             vibrate();
              // at last we are setting the user selected answer so we can check which one is correct and which one is incorrect
             questionLists.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
+                // this function will implement when a user give the wrong answer
+                vibrate();
             }
         });
         quizBinding.option4.setOnClickListener(v ->{
@@ -112,10 +112,10 @@ public class QuizActivity extends AppCompatActivity {
             quizBinding.option4.setBackgroundResource(R.drawable.background_option_red_color);
             // calling the function to check which question is right
             revealAnswer();
-            // this function will implement when a user give the wrong answer
-            vibrate();
             // at last we are setting the user selected answer so we can check which one is correct and which one is incorrect
             questionLists.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
+                // this function will implement when a user give the wrong answer
+                vibrate();
             }
         });
         // if a user selected the next btn then perform some function
