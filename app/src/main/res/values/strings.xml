@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="choose_a_topic">Choose A Topic</string>
+    <string name="java">Java</string>
+    <string name="php">PHP</string>
+    <string name="html">HTML</string>
+    <string name="android">Android</string>
+    <string name="start_quiz">Start Quiz</string>
+    <string name="selected_topic_name">Selected Topic Name</string>
+    <string name="_00_59">00:59</string>
+    <string name="_1_10">1/10</string>
+    <string name="question_will_come_here">Question Will Come Here....</string>
+    <string name="option_1">Option 1</string>
+    <string name="option_2">OPTION 2</string>
+    <string name="option_3">option 3</string>
+    <string name="option_4">option 4</string>
+    <string name="next">Next</string>
+    <string name="submit_quiz">Submit Quiz</string>
+    <string name="you_ve_successfully_completed_a_quiz">You\'ve Successfully Completed A Quiz</string>
+    <string name="correct_answer_0">Correct Answer : 0</string>
+    <string name="incorrect_answer_0">Incorrect Answer : 0</string>
+    <string name="start_new_quiz">Start New Quiz</string>
+</resources>
