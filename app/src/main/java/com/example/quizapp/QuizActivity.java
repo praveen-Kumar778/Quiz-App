@@ -137,6 +137,11 @@ public class QuizActivity extends AppCompatActivity {
         // here first we are getting the answer from the question list get answer function and setting it into get answer
         final String getAnswer = questionLists.get(currentQuestionPosition).getAnswer();
         final String getUserSelectedAnswer = questionLists.get(currentQuestionPosition).getUserSelectedAnswer();
+        if(getUserSelectedAnswer.equals(getAnswer)){
+            // when a user give the right answer it will play the true sound
+            MediaPlayer player = MediaPlayer.create(this,R.raw.correct);
+            player.start();
+        }
         if(!getUserSelectedAnswer.equals(getAnswer)) {
             // when a user get the wrong answer then we will vibrate the phone
             Vibrator vibrator = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
