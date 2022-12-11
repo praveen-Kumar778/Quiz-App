@@ -185,10 +185,6 @@ public class QuizActivity extends AppCompatActivity {
         for(int i = 0 ; i < questionLists.size() ; i++){
             final String getUserSelectedAnswer = questionLists.get(i).getUserSelectedAnswer();
             final String getAnswer = questionLists.get(i).getAnswer();
-            if(!getUserSelectedAnswer.equals(getAnswer)) {
-                // when a user get the wrong answer then we will vibrate the phone
-                Vibrator vibrator = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
-                vibrator.vibrate(100);
                 inCorrectAnswers++;
             }
         }
