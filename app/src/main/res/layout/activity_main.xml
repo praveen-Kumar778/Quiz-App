@@ -1,179 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     tools:context=".MainActivity">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/background_color" >
 
-   <ImageView
-       android:id="@+id/quizIcon"
-       android:layout_width="match_parent"
-       android:layout_height="140dp"
-       android:layout_marginTop="30dp"
-       android:layout_marginStart="80dp"
-       android:layout_marginEnd="80dp"
-       android:src="@drawable/quizicon"
-       android:scaleType="centerCrop"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       tools:ignore="ContentDescription"/>
-   <TextView
-      android:id="@+id/topic"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="@string/choose_a_topic"
-      app:layout_constraintTop_toBottomOf="@id/quizIcon"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      android:layout_marginTop="20dp"
-      android:textSize="25sp"
-      android:textColor="@color/white"
-      android:textStyle="bold"/>
-   <LinearLayout
-       android:id="@+id/layout1"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:orientation="horizontal"
-       android:layout_marginStart="20dp"
-       android:layout_marginEnd="20dp"
-       android:layout_marginTop="10dp"
-       android:weightSum="2"
-       app:layout_constraintTop_toBottomOf="@id/topic"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent">
-      <LinearLayout
-          android:id="@+id/javaLayout"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:gravity="center"
-          android:padding="20dp"
-          android:layout_marginEnd="5dp"
-          android:background="@drawable/round_back"
-          android:orientation="vertical">
-         <ImageView
-             android:layout_width="80dp"
-             android:layout_height="80dp"
-             android:src="@drawable/java"
-             tools:ignore="ContentDescription"/>
-         <TextView
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:text="@string/java"
-             android:layout_marginTop="8dp"
-             android:textColor="#CC000000"
-             android:textSize="18sp"
-             android:textStyle="bold"/>
-      </LinearLayout>
-      <LinearLayout
-          android:id="@+id/phpLayout"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:gravity="center"
-          android:padding="20dp"
-          android:layout_marginStart="5dp"
-          android:background="@drawable/round_back"
-          android:orientation="vertical">
-         <ImageView
-             android:layout_width="80dp"
-             android:layout_height="80dp"
-             android:src="@drawable/php"
-             tools:ignore="ContentDescription"/>
-         <TextView
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:text="@string/php"
-             android:layout_marginTop="8dp"
-             android:textColor="#CC000000"
-             android:textSize="18sp"
-             android:textStyle="bold"/>
-      </LinearLayout>
-   </LinearLayout>
-   <LinearLayout
-       android:id="@+id/layout2"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:orientation="horizontal"
-       android:layout_marginStart="20dp"
-       android:layout_marginEnd="20dp"
-       android:layout_marginTop="10dp"
-       android:weightSum="2"
-       app:layout_constraintTop_toBottomOf="@id/layout1"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent">
-      <LinearLayout
-          android:id="@+id/htmlLayout"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:gravity="center"
-          android:padding="20dp"
-          android:layout_marginEnd="5dp"
-          android:background="@drawable/round_back"
-          android:orientation="vertical">
-         <ImageView
-             android:layout_width="80dp"
-             android:layout_height="80dp"
-             android:src="@drawable/html_icon"
-             tools:ignore="ContentDescription"/>
-         <TextView
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:text="@string/html"
-             android:layout_marginTop="8dp"
-             android:textColor="#CC000000"
-             android:textSize="18sp"
-             android:textStyle="bold"/>
-      </LinearLayout>
-      <LinearLayout
-          android:id="@+id/androidLayout"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:gravity="center"
-          android:padding="20dp"
-          android:layout_marginStart="5dp"
-          android:background="@drawable/round_back"
-          android:orientation="vertical">
-         <ImageView
-             android:layout_width="80dp"
-             android:layout_height="80dp"
-             android:src="@drawable/android"
-             tools:ignore="ContentDescription"/>
-         <TextView
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:text="@string/android"
-             android:layout_marginTop="8dp"
-             android:textColor="#CC000000"
-             android:textSize="18sp"
-             android:textStyle="bold"/>
-      </LinearLayout>
-   </LinearLayout>
-   <androidx.appcompat.widget.AppCompatButton
-       android:id="@+id/startBtn"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="50dp"
-      android:layout_marginStart="20dp"
-      android:layout_marginEnd="20dp"
-      android:text="@string/start_quiz"
-       android:textStyle="bold"
-       android:textSize="16sp"
-       android:background="@drawable/round_start"
-       android:textColor="#FFFFFF"
-      app:layout_constraintTop_toBottomOf="@id/layout2"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_color">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/quizIcon"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="80dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/quizicon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/choose_a_topic"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/quizIcon" />
+
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topic">
+
+            <LinearLayout
+                android:id="@+id/javaLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_back"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/java"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/java"
+                    android:textColor="#CC000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/phpLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_back"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/php"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/php"
+                    android:textColor="#CC000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout1">
+
+            <LinearLayout
+                android:id="@+id/htmlLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_back"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/html_icon"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/html"
+                    android:textColor="#CC000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/androidLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_back"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/android"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/android"
+                    android:textColor="#CC000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/startBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/button_grey"
+            android:text="@string/start_quiz"
+            android:enabled="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

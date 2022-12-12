@@ -35,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
             mainBinding.androidLayout.setBackgroundResource(R.drawable.round_back);
             mainBinding.htmlLayout.setBackgroundResource(R.drawable.round_back);
             mainBinding.phpLayout.setBackgroundResource(R.drawable.round_back);
+            //When a user select any topic ten the button will be enabled
+            mainBinding.startBtn.setEnabled(true);
+            mainBinding.startBtn.setBackgroundResource(R.drawable.round_start);
         });
 
         mainBinding.phpLayout.setOnClickListener(v -> {
@@ -45,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
             mainBinding.androidLayout.setBackgroundResource(R.drawable.round_back);
             mainBinding.htmlLayout.setBackgroundResource(R.drawable.round_back);
             mainBinding.javaLayout.setBackgroundResource(R.drawable.round_back);
+            //When a user select any topic ten the button will be enabled
+            mainBinding.startBtn.setEnabled(true);
+            mainBinding.startBtn.setBackgroundResource(R.drawable.round_start);
         });
         mainBinding.htmlLayout.setOnClickListener(v -> {
             // next we are setting the topic name , image  and the background of HTML layout
@@ -54,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
             mainBinding.androidLayout.setBackgroundResource(R.drawable.round_back);
             mainBinding.phpLayout.setBackgroundResource(R.drawable.round_back);
             mainBinding.javaLayout.setBackgroundResource(R.drawable.round_back);
+            //When a user select any topic ten the button will be enabled
+            mainBinding.startBtn.setEnabled(true);
+            mainBinding.startBtn.setBackgroundResource(R.drawable.round_start);
         });
         mainBinding.androidLayout.setOnClickListener(v -> {
             // next we are setting the topic name , image  and the background of Android layout
@@ -63,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
             mainBinding.phpLayout.setBackgroundResource(R.drawable.round_back);
             mainBinding.htmlLayout.setBackgroundResource(R.drawable.round_back);
             mainBinding.javaLayout.setBackgroundResource(R.drawable.round_back);
+            //When a user select any topic ten the button will be enabled
+            mainBinding.startBtn.setEnabled(true);
+            mainBinding.startBtn.setBackgroundResource(R.drawable.round_start);
         });
 
         mainBinding.startBtn.setOnClickListener(v -> {
