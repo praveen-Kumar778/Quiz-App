@@ -2,15 +2,15 @@ package com.example.quizapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.quizapp.databinding.ActivityQuizBinding;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.text.MessageFormat;
 import java.util.List;
@@ -26,6 +26,7 @@ public class QuizActivity extends AppCompatActivity {
     private String selectedOptionByUser = "";
     // this variable is used to Confirm that if a user selected one option then it will not click another one
     private int selectedOption = 0;
+    SharedPreferences preferences ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +34,15 @@ public class QuizActivity extends AppCompatActivity {
         quizBinding = ActivityQuizBinding.inflate(getLayoutInflater());
         setContentView(quizBinding.getRoot());
         // First we are getting the intent which is passed from Main activity the topic name,imageId and setting it inside a string and int
-        final String getSelectedTopicName = getIntent().getStringExtra("topic");
-        final int getImage = getIntent().getIntExtra("img", 0);
+        preferences = getSharedPreferences("check",Context.MODE_PRIVATE);
+        String checking = preferences.getString("topicName","");
+        int getImage = preferences.getInt("img",0);
         // here we are setting the image and string we get from main activity
-        quizBinding.selectedTopic.setText(getSelectedTopicName);
+        quizBinding.selectedTopic.setText(checking);
         quizBinding.img.setImageResource(getImage);
         // in this line of code we are using List with a type of QuestionList class var name questionLists to set something inside that
         // inside that questionLists we are using Question activity calling get question function with the selected topic name by the user
-        questionLists = QuestionActivity.getQuestions(getSelectedTopicName);
+        questionLists = QuestionActivity.getQuestions(checking);
         // here we are using binding to bind with the views and setting all the things which we get from our question lists
         quizBinding.questionsCounter.setText(MessageFormat.format("{0}/{1}", currentQuestionPosition + 1, questionLists.size()));
         quizBinding.questions.setText(questionLists.get(0).getQuestion());
@@ -136,16 +138,17 @@ public class QuizActivity extends AppCompatActivity {
         // if a user selected the next btn then perform some function
         quizBinding.nextBtn.setOnClickListener(v -> {
             // if selected option by user is empty means no option is selected by the user
-            if (selectedOptionByUser.isEmpty()) {
+            /*if (selectedOptionByUser.isEmpty()) {
                 // if the selected option is empty then we show the snackbar to show the message to user for select the option
                 Snackbar sb = Snackbar.make(findViewById(android.R.id.content), "Please Select A Option First", Snackbar.LENGTH_SHORT);
                 View view = sb.getView();
                 view.setBackgroundColor(Color.RED);
                 sb.show();
-            } else {
+            } else {*/
                 // if the first statement is false then this code will run
                 changeNextQuestion();
-            }
+                quizBinding.nextBtn.setEnabled(false);
+                quizBinding.nextBtn.setBackgroundResource(R.drawable.button_grey);
         });
     }
 
@@ -153,11 +156,11 @@ public class QuizActivity extends AppCompatActivity {
         // firstly we are increasing the current question position = 1
         currentQuestionPosition++;
         // next we are checking if current question and question list size are same then change the text of next button to submt button
-        if ((currentQuestionPosition + 1) == questionLists.size()) {
+        if ((currentQuestionPosition + 1) == questionLists.size()){
             quizBinding.nextBtn.setText(R.string.submit_quiz);
         }
         // next here we are checking if the current question is less the questionlist size then run the code
-        if (currentQuestionPosition < questionLists.size()) {
+        if (currentQuestionPosition < questionLists.size()){
             // we set the selected option by the user is blank so that again if a user select a question it will store that option text
             selectedOptionByUser = "";
             // setting select option is 0 so that the option button will be triggered again

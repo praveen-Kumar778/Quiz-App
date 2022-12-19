@@ -1,6 +1,8 @@
 package com.example.quizapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Toast;
@@ -29,6 +31,10 @@ public class QuizResult extends AppCompatActivity {
         quizResultBinding.incorrectAns.setText(MessageFormat.format("Incorrect Answer : {0}", String.valueOf(incorrectAnswer)));
         // when a user click on start new quiz then the main activity class will be triggered
         quizResultBinding.startNewQuiz.setOnClickListener(v -> {
+            SharedPreferences pref = getSharedPreferences("check", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = pref.edit();
+            editor.clear();
+            editor.apply();
             startActivity(new Intent(QuizResult.this, MainActivity.class));
             // we finish the activity here so that when a user press back button it will close the app
             finish();
